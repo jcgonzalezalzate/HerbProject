@@ -1,0 +1,19 @@
+﻿@model HERBProject.Presentation.WebUI.Models.User.UserDataModel
+@{
+    ViewBag.Title = "Crear usuario";
+}
+
+<h2>Crear usuario</h2>
+<div>
+@using (Html.BeginForm("Create","User",FormMethod.Post, new { @id = "frmCreateUser"}))
+{
+    <p>@Html.Label("Nombre: ") @Html.TextBox("Name")</p>
+     <p>@Html.Label("Apellidos: ") @Html.TextBox("LastName")</p>
+     <p>@Html.Label("Nombre usuario: ") @Html.TextBox("NickName")</p>
+     <p>@Html.Label("Contraseña: ") @Html.TextBox("Password")</p>
+     <p>@Html.Label("Correo: ") @Html.TextBox("Email")</p>
+    
+    <p><input type="submit" text="Crear" /></p>
+    <p><input type="reset" text="Cancelar"</p>
+}
+</div>

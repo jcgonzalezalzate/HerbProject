@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HERBProject_DataBaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="HERBProject_DataBaseModelStoreContainer">
+          <EntitySet Name="Activity" EntityType="HERBProject_DataBaseModel.Store.Activity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Column" EntityType="HERBProject_DataBaseModel.Store.Column" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Project" EntityType="HERBProject_DataBaseModel.Store.Project" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="HERBProject_DataBaseModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersProjects" EntityType="HERBProject_DataBaseModel.Store.UsersProjects" store:Type="Tables" store:Schema="dbo" store:Name="UsersProjects">
+            <DefiningQuery>SELECT 
+      [UsersProjects].[id_User] AS [id_User], 
+      [UsersProjects].[id_Project] AS [id_Project]
+      FROM [dbo].[UsersProjects] AS [UsersProjects]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_UsersProjects_Project" Association="HERBProject_DataBaseModel.Store.FK_UsersProjects_Project">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="UsersProjects" EntitySet="UsersProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersProjects_User" Association="HERBProject_DataBaseModel.Store.FK_UsersProjects_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UsersProjects" EntitySet="UsersProjects" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="id_activity" />
+          </Key>
+          <Property Name="id_activity" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name_activity" Type="nvarchar" MaxLength="50" />
+          <Property Name="hours_activity" Type="nvarchar" MaxLength="50" />
+          <Property Name="docReque_activitiy" Type="nvarchar" MaxLength="100" />
+          <Property Name="owner_activity" Type="nvarchar" MaxLength="100" />
+          <Property Name="progress_activity" Type="nvarchar" MaxLength="50" />
+          <Property Name="follow_activity" Type="bit" />
+          <Property Name="assigned_activity" Type="nvarchar" MaxLength="50" />
+          <Property Name="description_activity" Type="nvarchar" MaxLength="50" />
+          <Property Name="comments_activity" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Column">
+          <Key>
+            <PropertyRef Name="id_Column" />
+          </Key>
+          <Property Name="id_Column" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name_Column" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="position_Column" Type="int" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="id_Project" />
+          </Key>
+          <Property Name="id_Project" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name_Project" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="description_Project" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="comment_Project" Type="nvarchar(max)" />
+          <Property Name="file_Project" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id_User" />
+          </Key>
+          <Property Name="id_User" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name_user" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="lastName_user" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="nickname_user" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="password_user" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="email_user" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'HERBProject_DataBase.dbo.UsersProjects' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="UsersProjects">
+          <Key>
+            <PropertyRef Name="id_User" />
+            <PropertyRef Name="id_Project" />
+          </Key>
+          <Property Name="id_User" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_Project" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_UsersProjects_Project">
+          <End Role="Project" Type="HERBProject_DataBaseModel.Store.Project" Multiplicity="1" />
+          <End Role="UsersProjects" Type="HERBProject_DataBaseModel.Store.UsersProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="id_Project" />
+            </Principal>
+            <Dependent Role="UsersProjects">
+              <PropertyRef Name="id_Project" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersProjects_User">
+          <End Role="User" Type="HERBProject_DataBaseModel.Store.User" Multiplicity="1" />
+          <End Role="UsersProjects" Type="HERBProject_DataBaseModel.Store.UsersProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id_User" />
+            </Principal>
+            <Dependent Role="UsersProjects">
+              <PropertyRef Name="id_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HERBProject_DataBaseModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="HERBProject_DataBaseEntities">
+          <EntitySet Name="Activity" EntityType="HERBProject_DataBaseModel.Activity" />
+          <EntitySet Name="Column" EntityType="HERBProject_DataBaseModel.Column" />
+          <EntitySet Name="Project" EntityType="HERBProject_DataBaseModel.Project" />
+          <EntitySet Name="User" EntityType="HERBProject_DataBaseModel.User" />
+          <AssociationSet Name="UsersProjects" Association="HERBProject_DataBaseModel.UsersProjects">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="id_activity" />
+          </Key>
+          <Property Type="Guid" Name="id_activity" Nullable="false" />
+          <Property Type="String" Name="name_activity" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="hours_activity" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="docReque_activitiy" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="owner_activity" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="progress_activity" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="follow_activity" />
+          <Property Type="String" Name="assigned_activity" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="description_activity" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="comments_activity" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Column">
+          <Key>
+            <PropertyRef Name="id_Column" />
+          </Key>
+          <Property Type="Guid" Name="id_Column" Nullable="false" />
+          <Property Type="String" Name="name_Column" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="position_Column" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="id_Project" />
+          </Key>
+          <Property Type="Guid" Name="id_Project" Nullable="false" />
+          <Property Type="String" Name="name_Project" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="description_Project" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="comment_Project" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="file_Project" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="HERBProject_DataBaseModel.UsersProjects" FromRole="Project" ToRole="User" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id_User" />
+          </Key>
+          <Property Type="Guid" Name="id_User" Nullable="false" />
+          <Property Type="String" Name="name_user" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="lastName_user" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="nickname_user" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="password_user" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="email_user" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Project" Relationship="HERBProject_DataBaseModel.UsersProjects" FromRole="User" ToRole="Project" />
+        </EntityType>
+        <Association Name="UsersProjects">
+          <End Type="HERBProject_DataBaseModel.Project" Role="Project" Multiplicity="*" />
+          <End Type="HERBProject_DataBaseModel.User" Role="User" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="HERBProject_DataBaseModelStoreContainer" CdmEntityContainer="HERBProject_DataBaseEntities">
+          <EntitySetMapping Name="Activity">
+            <EntityTypeMapping TypeName="HERBProject_DataBaseModel.Activity">
+              <MappingFragment StoreEntitySet="Activity">
+                <ScalarProperty Name="comments_activity" ColumnName="comments_activity" />
+                <ScalarProperty Name="description_activity" ColumnName="description_activity" />
+                <ScalarProperty Name="assigned_activity" ColumnName="assigned_activity" />
+                <ScalarProperty Name="follow_activity" ColumnName="follow_activity" />
+                <ScalarProperty Name="progress_activity" ColumnName="progress_activity" />
+                <ScalarProperty Name="owner_activity" ColumnName="owner_activity" />
+                <ScalarProperty Name="docReque_activitiy" ColumnName="docReque_activitiy" />
+                <ScalarProperty Name="hours_activity" ColumnName="hours_activity" />
+                <ScalarProperty Name="name_activity" ColumnName="name_activity" />
+                <ScalarProperty Name="id_activity" ColumnName="id_activity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Column">
+            <EntityTypeMapping TypeName="HERBProject_DataBaseModel.Column">
+              <MappingFragment StoreEntitySet="Column">
+                <ScalarProperty Name="position_Column" ColumnName="position_Column" />
+                <ScalarProperty Name="name_Column" ColumnName="name_Column" />
+                <ScalarProperty Name="id_Column" ColumnName="id_Column" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project">
+            <EntityTypeMapping TypeName="HERBProject_DataBaseModel.Project">
+              <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="file_Project" ColumnName="file_Project" />
+                <ScalarProperty Name="comment_Project" ColumnName="comment_Project" />
+                <ScalarProperty Name="description_Project" ColumnName="description_Project" />
+                <ScalarProperty Name="name_Project" ColumnName="name_Project" />
+                <ScalarProperty Name="id_Project" ColumnName="id_Project" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="HERBProject_DataBaseModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="email_user" ColumnName="email_user" />
+                <ScalarProperty Name="password_user" ColumnName="password_user" />
+                <ScalarProperty Name="nickname_user" ColumnName="nickname_user" />
+                <ScalarProperty Name="lastName_user" ColumnName="lastName_user" />
+                <ScalarProperty Name="name_user" ColumnName="name_user" />
+                <ScalarProperty Name="id_User" ColumnName="id_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="UsersProjects" TypeName="HERBProject_DataBaseModel.UsersProjects" StoreEntitySet="UsersProjects">
+            <EndProperty Name="User">
+              <ScalarProperty Name="id_User" ColumnName="id_User" />
+            </EndProperty>
+            <EndProperty Name="Project">
+              <ScalarProperty Name="id_Project" ColumnName="id_Project" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="HERBProject_DataBase">
+        <EntityTypeShape EntityType="HERBProject_DataBaseModel.Activity" Width="1.5" PointX="5.125" PointY="0.5" Height="2.9417936197916656" />
+        <EntityTypeShape EntityType="HERBProject_DataBaseModel.Column" Width="1.5" PointX="6.875" PointY="0.5" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="HERBProject_DataBaseModel.Project" Width="1.5" PointX="1.125" PointY="0.5" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="HERBProject_DataBaseModel.User" Width="1.5" PointX="3.125" PointY="0.5" Height="2.3648893229166674" />
+        <AssociationConnector Association="HERBProject_DataBaseModel.UsersProjects" >
+          <ConnectorPoint PointX="2.625" PointY="1.5862939453124998" />
+          <ConnectorPoint PointX="3.125" PointY="1.5862939453124998" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

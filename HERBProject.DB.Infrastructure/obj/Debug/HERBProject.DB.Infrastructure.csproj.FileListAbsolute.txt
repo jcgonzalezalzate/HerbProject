@@ -1,0 +1,14 @@
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.DB.Infrastructure\bin\Debug\HERBProject.DB.Infrastructure.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.DB.Infrastructure\bin\Debug\HERBProject.DB.Infrastructure.pdb
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.DB.Infrastructure\bin\Debug\HERBProject.DB.Infrastructure.dll.CodeAnalysisLog.xml
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.DB.Infrastructure\bin\Debug\HERBProject.DB.Infrastructure.dll.lastcodeanalysissucceeded
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.DB.Infrastructure\bin\Debug\Fasterflect.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.DB.Infrastructure\bin\Debug\log4net.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.DB.Infrastructure\bin\Debug\Fasterflect.xml
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.DB.Infrastructure\bin\Debug\log4net.xml
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.DB.Infrastructure\obj\Debug\HERBProject.DB.Infrastructure.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.DB.Infrastructure\obj\Debug\HERBProject.DB.Infrastructure.pdb
+C:\Users\newshore\Documents\Visual Studio 2012\Projects\HerbProject\HERBProject.DB.Infrastructure\bin\Debug\HERBProject.DB.Infrastructure.dll.config
+C:\Users\newshore\Documents\Visual Studio 2012\Projects\HerbProject\HERBProject.DB.Infrastructure\obj\Debug\HERBProject.DB.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\newshore\Documents\Visual Studio 2012\Projects\HerbProject\HERBProject.DB.Infrastructure\bin\Debug\HERBProject.Library.dll
+C:\Users\newshore\Documents\Visual Studio 2012\Projects\HerbProject\HERBProject.DB.Infrastructure\bin\Debug\HERBProject.Library.pdb

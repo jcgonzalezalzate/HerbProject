@@ -1,0 +1,15 @@
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Impl.ServiceLibrary\obj\Debug\HERBProject.Impl.ServiceLibrary.csprojResolveAssemblyReference.cache
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Impl.ServiceLibrary\bin\Debug\HERBProject.Impl.ServiceLibrary.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Impl.ServiceLibrary\bin\Debug\HERBProject.Impl.ServiceLibrary.pdb
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Impl.ServiceLibrary\bin\Debug\HERBProject.Impl.ServiceLibrary.dll.CodeAnalysisLog.xml
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Impl.ServiceLibrary\bin\Debug\HERBProject.Impl.ServiceLibrary.dll.lastcodeanalysissucceeded
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Impl.ServiceLibrary\bin\Debug\HERBProject.Contracts.ServiceLibrary.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Impl.ServiceLibrary\bin\Debug\HERBProject.Library.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Impl.ServiceLibrary\bin\Debug\Vueling.Configuration.Library.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Impl.ServiceLibrary\bin\Debug\Vueling.Extensions.Library.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Impl.ServiceLibrary\bin\Debug\HERBProject.Contracts.ServiceLibrary.pdb
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Impl.ServiceLibrary\bin\Debug\HERBProject.Library.pdb
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Impl.ServiceLibrary\bin\Debug\Vueling.Configuration.Library.pdb
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Impl.ServiceLibrary\bin\Debug\Vueling.Extensions.Library.pdb
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Impl.ServiceLibrary\obj\Debug\HERBProject.Impl.ServiceLibrary.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Impl.ServiceLibrary\obj\Debug\HERBProject.Impl.ServiceLibrary.pdb

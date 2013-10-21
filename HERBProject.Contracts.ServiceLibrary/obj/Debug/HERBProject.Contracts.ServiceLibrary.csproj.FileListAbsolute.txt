@@ -1,0 +1,7 @@
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Contracts.ServiceLibrary\bin\Debug\HERBProject.Contracts.ServiceLibrary.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Contracts.ServiceLibrary\bin\Debug\HERBProject.Contracts.ServiceLibrary.pdb
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Contracts.ServiceLibrary\bin\Debug\HERBProject.Contracts.ServiceLibrary.dll.CodeAnalysisLog.xml
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Contracts.ServiceLibrary\bin\Debug\HERBProject.Contracts.ServiceLibrary.dll.lastcodeanalysissucceeded
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Contracts.ServiceLibrary\obj\Debug\HERBProject.Contracts.ServiceLibrary.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Contracts.ServiceLibrary\obj\Debug\HERBProject.Contracts.ServiceLibrary.pdb
+C:\Users\newshore\Documents\Visual Studio 2012\Projects\HerbProject\HERBProject.Contracts.ServiceLibrary\obj\Debug\HERBProject.Contracts.ServiceLibrary.csprojResolveAssemblyReference.cache

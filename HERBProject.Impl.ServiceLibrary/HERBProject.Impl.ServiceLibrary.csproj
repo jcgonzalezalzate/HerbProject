@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{62D3F9F6-8FE6-4B1A-9584-F88CDCEE8119}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HERBProject.Impl.ServiceLibrary</RootNamespace>
+    <AssemblyName>HERBProject.Impl.ServiceLibrary</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet Condition="'$(ISTEAMBUILDMACHINE)' == '1'">..\BuildProcessTemplates\TFSBuildExtensions\SupportFiles\VuelingRuleSet.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(ISTEAMBUILDMACHINE)' == ''">..\..\..\BuildProcessTemplates\TFSBuildExtensions\SupportFiles\VuelingRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet Condition="'$(ISTEAMBUILDMACHINE)' == '1'">..\BuildProcessTemplates\TFSBuildExtensions\SupportFiles\VuelingRuleSet.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(ISTEAMBUILDMACHINE)' == ''">..\..\..\BuildProcessTemplates\TFSBuildExtensions\SupportFiles\VuelingRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vueling.Configuration.Library, Version=1.2.0.2, Culture=neutral, PublicKeyToken=64469f821e1d1c06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Vueling.Configuration.Library.1.2.0.2\lib\net35\Vueling.Configuration.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="Vueling.Extensions.Library, Version=1.0.1.0, Culture=neutral, PublicKeyToken=64469f821e1d1c06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Vueling.Extensions.Library.1.0.1\lib\net35\Vueling.Extensions.Library.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationService.cs" />
+    <Compile Include="Configuration\IXXXServiceLibraryConfiguration.cs" />
+    <Compile Include="Configuration\XXXServiceLibraryConfiguration.cs" />
+    <Compile Include="Exceptions\ConfigurationInitializationException.cs" />
+    <Compile Include="Impl\MannageUser.cs" />
+    <Compile Include="MapFactories\MapDomainToDTO\EnumDTO.cs" />
+    <Compile Include="MapFactories\MapDomainToDTO\UserEntityToUserDTOFactory.cs" />
+    <Compile Include="MapFactories\MapDomainToDTO\MapDomainToDTOFactoryBase.cs" />
+    <Compile Include="MapFactories\MapDomainToDTO\SwitcherEntityToDTOFactory.cs" />
+    <Compile Include="MapFactories\MapDTOToDomain\EnumDomain.cs" />
+    <Compile Include="MapFactories\MapDTOToDomain\UserDTOToUserEntityFactory.cs" />
+    <Compile Include="MapFactories\MapDTOToDomain\MapDTOToDomainFactoryBase.cs" />
+    <Compile Include="MapFactories\MapDTOToDomain\SwitcherDTOToEntityFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HERBProject.Contracts.ServiceLibrary\HERBProject.Contracts.ServiceLibrary.csproj">
+      <Project>{0f8c8f7e-94cd-4fb0-898a-8ed97b98b846}</Project>
+      <Name>HERBProject.Contracts.ServiceLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HERBProject.Library\HERBProject.Library.csproj">
+      <Project>{8d48807f-7d49-4444-95d7-6453af9c13df}</Project>
+      <Name>HERBProject.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="BeforeBuild">
+  </Target>
+</Project>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HERBProject_DataBaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityContainer Name="HERBProject_DataBaseModelStoreContainer">
+    <EntitySet Name="Activity" EntityType="HERBProject_DataBaseModel.Store.Activity" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Column" EntityType="HERBProject_DataBaseModel.Store.Column" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Project" EntityType="HERBProject_DataBaseModel.Store.Project" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="HERBProject_DataBaseModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsersProjects" EntityType="HERBProject_DataBaseModel.Store.UsersProjects" store:Type="Tables" store:Schema="dbo" store:Name="UsersProjects">
+      <DefiningQuery>SELECT 
+      [UsersProjects].[id_User] AS [id_User], 
+      [UsersProjects].[id_Project] AS [id_Project]
+      FROM [dbo].[UsersProjects] AS [UsersProjects]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_UsersProjects_Project" Association="HERBProject_DataBaseModel.Store.FK_UsersProjects_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="UsersProjects" EntitySet="UsersProjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsersProjects_User" Association="HERBProject_DataBaseModel.Store.FK_UsersProjects_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UsersProjects" EntitySet="UsersProjects" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="id_activity" />
+    </Key>
+    <Property Name="id_activity" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="name_activity" Type="nvarchar" MaxLength="50" />
+    <Property Name="hours_activity" Type="nvarchar" MaxLength="50" />
+    <Property Name="docReque_activitiy" Type="nvarchar" MaxLength="100" />
+    <Property Name="owner_activity" Type="nvarchar" MaxLength="100" />
+    <Property Name="progress_activity" Type="nvarchar" MaxLength="50" />
+    <Property Name="follow_activity" Type="bit" />
+    <Property Name="assigned_activity" Type="nvarchar" MaxLength="50" />
+    <Property Name="description_activity" Type="nvarchar" MaxLength="50" />
+    <Property Name="comments_activity" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Column">
+    <Key>
+      <PropertyRef Name="id_Column" />
+    </Key>
+    <Property Name="id_Column" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="name_Column" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="position_Column" Type="int" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="id_Project" />
+    </Key>
+    <Property Name="id_Project" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="name_Project" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="description_Project" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="comment_Project" Type="nvarchar(max)" />
+    <Property Name="file_Project" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id_User" />
+    </Key>
+    <Property Name="id_User" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="name_user" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="lastName_user" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="nickname_user" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="password_user" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="email_user" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'HERBProject_DataBase.dbo.UsersProjects' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="UsersProjects">
+    <Key>
+      <PropertyRef Name="id_User" />
+      <PropertyRef Name="id_Project" />
+    </Key>
+    <Property Name="id_User" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="id_Project" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_UsersProjects_Project">
+    <End Role="Project" Type="HERBProject_DataBaseModel.Store.Project" Multiplicity="1" />
+    <End Role="UsersProjects" Type="HERBProject_DataBaseModel.Store.UsersProjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="id_Project" />
+      </Principal>
+      <Dependent Role="UsersProjects">
+        <PropertyRef Name="id_Project" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsersProjects_User">
+    <End Role="User" Type="HERBProject_DataBaseModel.Store.User" Multiplicity="1" />
+    <End Role="UsersProjects" Type="HERBProject_DataBaseModel.Store.UsersProjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id_User" />
+      </Principal>
+      <Dependent Role="UsersProjects">
+        <PropertyRef Name="id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

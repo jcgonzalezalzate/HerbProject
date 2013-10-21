@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="CustomBoundedDataModelStoreContainer" CdmEntityContainer="CustomBoundedDbEntities">
+    <EntitySetMapping Name="Input">
+      <EntityTypeMapping TypeName="CustomBoundedDataModel.Input">
+        <MappingFragment StoreEntitySet="Input">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Property" ColumnName="Property" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

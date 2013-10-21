@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="HERBProject_DataBaseModelStoreContainer" CdmEntityContainer="HERBProject_DataBaseEntities">
+    <EntitySetMapping Name="Activity">
+      <EntityTypeMapping TypeName="HERBProject_DataBaseModel.Activity">
+        <MappingFragment StoreEntitySet="Activity">
+          <ScalarProperty Name="comments_activity" ColumnName="comments_activity" />
+          <ScalarProperty Name="description_activity" ColumnName="description_activity" />
+          <ScalarProperty Name="assigned_activity" ColumnName="assigned_activity" />
+          <ScalarProperty Name="follow_activity" ColumnName="follow_activity" />
+          <ScalarProperty Name="progress_activity" ColumnName="progress_activity" />
+          <ScalarProperty Name="owner_activity" ColumnName="owner_activity" />
+          <ScalarProperty Name="docReque_activitiy" ColumnName="docReque_activitiy" />
+          <ScalarProperty Name="hours_activity" ColumnName="hours_activity" />
+          <ScalarProperty Name="name_activity" ColumnName="name_activity" />
+          <ScalarProperty Name="id_activity" ColumnName="id_activity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Column">
+      <EntityTypeMapping TypeName="HERBProject_DataBaseModel.Column">
+        <MappingFragment StoreEntitySet="Column">
+          <ScalarProperty Name="position_Column" ColumnName="position_Column" />
+          <ScalarProperty Name="name_Column" ColumnName="name_Column" />
+          <ScalarProperty Name="id_Column" ColumnName="id_Column" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project">
+      <EntityTypeMapping TypeName="HERBProject_DataBaseModel.Project">
+        <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="file_Project" ColumnName="file_Project" />
+          <ScalarProperty Name="comment_Project" ColumnName="comment_Project" />
+          <ScalarProperty Name="description_Project" ColumnName="description_Project" />
+          <ScalarProperty Name="name_Project" ColumnName="name_Project" />
+          <ScalarProperty Name="id_Project" ColumnName="id_Project" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="HERBProject_DataBaseModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="email_user" ColumnName="email_user" />
+          <ScalarProperty Name="password_user" ColumnName="password_user" />
+          <ScalarProperty Name="nickname_user" ColumnName="nickname_user" />
+          <ScalarProperty Name="lastName_user" ColumnName="lastName_user" />
+          <ScalarProperty Name="name_user" ColumnName="name_user" />
+          <ScalarProperty Name="id_User" ColumnName="id_User" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="UsersProjects" TypeName="HERBProject_DataBaseModel.UsersProjects" StoreEntitySet="UsersProjects">
+      <EndProperty Name="User">
+        <ScalarProperty Name="id_User" ColumnName="id_User" />
+      </EndProperty>
+      <EndProperty Name="Project">
+        <ScalarProperty Name="id_Project" ColumnName="id_Project" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

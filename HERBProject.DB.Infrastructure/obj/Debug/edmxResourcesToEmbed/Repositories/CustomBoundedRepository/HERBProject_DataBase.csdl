@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HERBProject_DataBaseModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+  <EntityContainer Name="HERBProject_DataBaseEntities">
+    <EntitySet Name="Activity" EntityType="HERBProject_DataBaseModel.Activity" />
+    <EntitySet Name="Column" EntityType="HERBProject_DataBaseModel.Column" />
+    <EntitySet Name="Project" EntityType="HERBProject_DataBaseModel.Project" />
+    <EntitySet Name="User" EntityType="HERBProject_DataBaseModel.User" />
+    <AssociationSet Name="UsersProjects" Association="HERBProject_DataBaseModel.UsersProjects">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="id_activity" />
+    </Key>
+    <Property Type="Guid" Name="id_activity" Nullable="false" />
+    <Property Type="String" Name="name_activity" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="hours_activity" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="docReque_activitiy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="owner_activity" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="progress_activity" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="follow_activity" />
+    <Property Type="String" Name="assigned_activity" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="description_activity" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="comments_activity" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Column">
+    <Key>
+      <PropertyRef Name="id_Column" />
+    </Key>
+    <Property Type="Guid" Name="id_Column" Nullable="false" />
+    <Property Type="String" Name="name_Column" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="position_Column" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="id_Project" />
+    </Key>
+    <Property Type="Guid" Name="id_Project" Nullable="false" />
+    <Property Type="String" Name="name_Project" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="description_Project" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="comment_Project" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="file_Project" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="HERBProject_DataBaseModel.UsersProjects" FromRole="Project" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id_User" />
+    </Key>
+    <Property Type="Guid" Name="id_User" Nullable="false" />
+    <Property Type="String" Name="name_user" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="lastName_user" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="nickname_user" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="password_user" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="email_user" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Project" Relationship="HERBProject_DataBaseModel.UsersProjects" FromRole="User" ToRole="Project" />
+  </EntityType>
+  <Association Name="UsersProjects">
+    <End Type="HERBProject_DataBaseModel.Project" Role="Project" Multiplicity="*" />
+    <End Type="HERBProject_DataBaseModel.User" Role="User" Multiplicity="*" />
+  </Association>
+</Schema>

@@ -1,0 +1,10 @@
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Library\bin\Debug\HERBProject.Library.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Library\bin\Debug\HERBProject.Library.pdb
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Library\bin\Debug\HERBProject.Library.dll.CodeAnalysisLog.xml
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Library\bin\Debug\HERBProject.Library.dll.lastcodeanalysissucceeded
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Library\bin\Debug\Fasterflect.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Library\bin\Debug\log4net.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Library\bin\Debug\Fasterflect.xml
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Library\bin\Debug\log4net.xml
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Library\obj\Debug\HERBProject.Library.dll
+C:\Users\newshore\documents\visual studio 2012\Projects\HerbProject\HERBProject.Library\obj\Debug\HERBProject.Library.pdb

@@ -1,0 +1,15 @@
+﻿@model HERBProject.WebUI.Models.IndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Parameters<h2>
+<div>
+@using (Html.BeginForm())
+{
+    <p>Form Variable:@Html.TextBox("formVariable")</p>
+    <p><input type="submit" id="btnSubmit" value="Submit"/></p>
+}
+</div>
+<h2>Index @Model.IndexViewModelProperty</h2>
