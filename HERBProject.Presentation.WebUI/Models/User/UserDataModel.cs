@@ -16,7 +16,7 @@ namespace HERBProject.Presentation.WebUI.Models.User
         public string NickName { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-        public virtual IList<Project.ProjectDataModel> ProjectEntities { get; set; }
+        //public virtual IList<Project.ProjectDataModel> ProjectEntities { get; set; }
 
 
         #endregion        

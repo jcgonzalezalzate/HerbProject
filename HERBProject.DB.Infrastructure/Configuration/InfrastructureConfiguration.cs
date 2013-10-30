@@ -26,7 +26,7 @@ namespace HERBProject.DB.Infrastructure.Configuration
             try
             {
                 DatabaseTimeout = 60000;
-                ConnectionString = @"data source=NEWSHORE-PC\VUELING3;initial catalog=HERBProject_DataBase;persist security info=True;user id=sa;password=admin";
+                ConnectionString = @"workstation id=HERBProject.mssql.somee.com;packet size=4096;user id=ingumbraco_SQLLogin_2;pwd=ftry6ttdem;data source=HERBProject.mssql.somee.com;persist security info=False;initial catalog=HERBProject";
             }
 
             catch (Exception anyException)
