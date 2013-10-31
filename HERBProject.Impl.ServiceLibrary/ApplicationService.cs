@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Vueling.Extensions.Library.DI;
+//using Vueling.Extensions.Library.DI;
 //using Vueling.XXX.Contracts.ServiceLibrary;
 //using Vueling.XXX.Contracts.ServiceLibrary.DTO;
 using HERBProject.Impl.ServiceLibrary.Configuration;
@@ -15,7 +15,7 @@ using HERBProject.Library.DomainServicesContracts;
 
 namespace HERBProject.Impl.ServiceLibrary
 {
-    [RegisterServiceAttribute]
+    //[RegisterServiceAttribute]
     public class ApplicationService : IApplicationServiceContract
     {
 
