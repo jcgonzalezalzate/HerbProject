@@ -22,7 +22,7 @@ namespace HERBProject.Impl.ServiceLibrary
         #region .: variables :.
 
         private IDomainServiceContract _domainServiceContract;
-        private IXXXServiceLibraryConfiguration _xXXServiceLibraryConfiguration;
+        private IXXXServiceLibraryConfiguration _xxxxx;
 
         #endregion
 
@@ -31,7 +31,7 @@ namespace HERBProject.Impl.ServiceLibrary
         public ApplicationService(IXXXServiceLibraryConfiguration serviceLibraryConfiguration, IDomainServiceContract domainServiceContract)
         {
             _domainServiceContract = domainServiceContract;
-            _xXXServiceLibraryConfiguration = serviceLibraryConfiguration;
+            _xxxxx = serviceLibraryConfiguration;
         }
 
         #endregion
