@@ -21,7 +21,7 @@ namespace HERBProject.Impl.ServiceLibrary
 
         #region .: variables :.
 
-        private IDomainServiceContract _domainServiceContract;
+      
 
 
         #endregion
